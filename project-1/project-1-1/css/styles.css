@@ -1,0 +1,457 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #1E1E1E;
+    color: #D9D9D9;
+    font-family: 'DM Mono', monospace;
+    padding: 0;
+    margin: 0;
+}
+
+
+h3 {
+    /* font-family: 'Cormorant Garamond', serif; */
+    text-align: center;
+    height: 35px;
+    border: 2px solid #D9D9D9;
+    line-height: 36px;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    /* line-height: 30px; */
+    font-size: 200px;
+    font-family: 'Cormorant Garamond', serif;
+    /* margin-top: 100px; */
+
+    -webkit-text-fill-color: #1E1E1E; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #D9D9D9;
+}
+
+#star{
+    line-height: 100px !important;
+}
+
+h2 {
+    /* text-align: center; */
+    /* line-height: 30px; */
+    font-size: 100px;
+    font-family: 'Cormorant Garamond', serif;
+    margin-top: 40px;
+
+    -webkit-text-fill-color: #1E1E1E; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #D9D9D9;
+    margin-left: 80vw;
+    /* position: relative; */
+    /* left: 100px; */
+} 
+
+p {
+    text-align: center;
+    height: 30px;
+    /* border: 2px solid #D9D9D9; */
+    line-height: 30px;
+    /* font-size: 15px; */
+    font-size: 18px;
+
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 30px;
+}
+
+#generate {
+    width: 100vw;
+    height: 920px;
+    position: absolute;
+    background-color: #d3d0cc;
+    top: 160px;
+    margin-top: 510px;
+}
+
+#generate-text {
+    text-align: center;
+    height: 35px;
+    width: 15em;
+    border: 2px solid #1E1E1E;
+    line-height: 34px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #1E1E1E;
+    margin-top: 50px;
+}
+
+#images-button{
+    text-align: center;
+    width: 5em;
+    font-size: 18px;
+    margin-left: auto;
+    color: #1E1E1E;
+    margin-top: 10px;
+    background-color: #d3d0cc;
+    font-family: 'DM Mono', monospace;
+    /* border: 2px solid #1E1E1E; */
+    height: 35px;
+}
+
+#gifs-button{
+    text-align: center;
+    width: 5em;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #1E1E1E;
+    margin-top: 10px;
+    background-color: #d3d0cc;
+    font-family: 'DM Mono', monospace;
+    /* border: 2px solid #1E1E1E; */
+    height: 35px;
+}
+
+#images-gifs{
+    list-style-type: none;
+    text-align: center;
+}
+
+#images-gifs li {
+    display: inline-block;
+    /* padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    border: 2px solid #1E1E1E;
+    font-size: 18px;
+    color: #1E1E1E;
+    height: 35px; */
+    padding: 0 155px;
+    margin-top: 20px;
+}
+
+canvas {
+    position: absolute;
+    left: 50%;
+    top: 1150px;
+    transform: translate(-50%, -50%);
+    /* opacity: 70%; */
+    width:20px;
+    height: auto;
+}
+
+#canvas-background {
+    position: absolute;
+    left: 20%;
+    top: 1150px;
+    transform: translate(-50%, -50%);
+    width:500px;
+    height: 700px;
+    background-color: black;
+}
+
+#refresh-button{
+    position: relative;
+    /* position: absolute; */
+    top: 706px;
+    left: 73vw;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background-color: #d3d0cc;
+}
+
+#arrow {
+    width: 20px;
+    height: 20px;
+    filter: grayscale(100%) contrast(100%);
+    margin-top: 3.5px;
+}
+
+#collection {
+    width: 100vw;
+    /* height: 446px; */
+    height: 500px;
+    position: absolute;
+    background-color: #1E1E1E;
+    top: 1700px;
+    margin-top: -120px;
+}
+
+#text-collection{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+}
+
+#text-collection li {
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* font-size: 15px; */
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+
+
+    text-align: center;
+    border: 2px solid #1E1E1E;
+    /* line-height: 32px; */
+    font-size: 18px;
+    color: #1E1E1E;
+    /* margin-top: 50px; */
+
+}
+
+#all {
+    text-align: center;
+    height: 35px;
+    width: 4em;
+    border: 2px solid #D9D9D9;
+    line-height: 32px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #D9D9D9;
+    margin-top: 50px;
+    background-color: #1E1E1E;
+    font-family: 'DM Mono', monospace;
+}
+
+#original {
+    text-align: center;
+    height: 35px;
+    width: 7em;
+    border: 2px solid #D9D9D9;
+    line-height: 28px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #D9D9D9;
+    margin-top: 50px;
+    background-color: #1E1E1E;
+    font-family: 'DM Mono', monospace;
+}
+
+#process {
+    text-align: center;
+    height: 35px;
+    width: 7em;
+    border: 2px solid #D9D9D9;
+    line-height: 28px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #D9D9D9;
+    margin-top: 50px;
+    background-color: #1E1E1E;
+    font-family: 'DM Mono', monospace;
+}
+
+#gifs {
+    text-align: center;
+    height: 35px;
+    width: 4em;
+    border: 2px solid #D9D9D9;
+    line-height: 28px;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #D9D9D9;
+    margin-top: 50px;
+    background-color: #1E1E1E;
+    font-family: 'DM Mono', monospace;
+}
+
+#process-images-cover{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: auto auto auto;
+    position: relative;
+    height: 500px; /* set the desired height */
+    width: 357px; /* set the desired width */
+    overflow: hidden; /* hide any overflow */
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+
+#process-images-cover-last{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: auto auto auto;
+    position: relative;
+    height: 500px; /* set the desired height */
+    width: 357px; /* set the desired width */
+    overflow: hidden; /* hide any overflow */
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;   
+    margin-bottom: 100px;
+}
+
+
+#process-images{
+    /* width: 400px;
+    height auto;
+    /* margin: -50px -100px 0px 0px; */
+    /* margin: -150px 0px 0px -150px;
+    padding: 10px; */
+
+   position: absolute;
+   top: -721px; /* shift the image up by 100px */
+   left: -1452px; /* shift the image left by 100px */
+   height: auto;
+   width: auto;
+   min-height: 100%; /* ensure the image fills the container */
+   min-width: 100%;
+   object-fit: cover; /* fill the container while preserving aspect ratio */
+    /* padding:100px; */
+    transform: scale(40%) ;
+    
+}
+
+#process-collection {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* margin-top: 1200px; */
+}
+
+#gifs-images{
+    width: auto;
+    height: 500px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#gifs-images-cover{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#gifs-images-cover-last{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+#gifs-collection{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+
+
+#original-images-cover{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: auto auto auto;
+    position: relative;
+    height: 500px; /* set the desired height */
+    width: 357px; /* set the desired width */
+    overflow: hidden; /* hide any overflow */
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+
+#original-images-cover-last{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: auto auto auto;
+    position: relative;
+    height: 500px; /* set the desired height */
+    width: 357px; /* set the desired width */
+    overflow: hidden; /* hide any overflow */
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;   
+    margin-bottom: 100px;
+}
+
+
+#original-images{
+    /* width: 400px;
+    height auto;
+    /* margin: -50px -100px 0px 0px; */
+    /* margin: -150px 0px 0px -150px;
+    padding: 10px; */
+
+   position: absolute;
+   top: -721px; /* shift the image up by 100px */
+   left: -1452px; /* shift the image left by 100px */
+   height: auto;
+   width: auto;
+   min-height: 100%; /* ensure the image fills the container */
+   min-width: 100%;
+   object-fit: cover; /* fill the container while preserving aspect ratio */
+    /* padding:100px; */
+    transform: scale(40%) ;
+    
+}
+
+#original-images-2{
+    /* width: 400px;
+    height auto;
+    /* margin: -50px -100px 0px 0px; */
+    /* margin: -150px 0px 0px -150px;
+    padding: 10px; */
+
+   position: absolute;
+   top: -721px; /* shift the image up by 100px */
+   left: -1280px; /* shift the image left by 100px */
+   height: auto;
+   width: auto;
+   min-height: 100%; /* ensure the image fills the container */
+   min-width: 100%;
+   object-fit: cover; /* fill the container while preserving aspect ratio */
+    /* padding:100px; */
+    transform: scale(40%) ;
+}
+
+
+#original-images-3{
+    /* width: 400px;
+    height auto;
+    /* margin: -50px -100px 0px 0px; */
+    /* margin: -150px 0px 0px -150px;
+    padding: 10px; */
+
+   position: absolute;
+   top: -725px; /* shift the image up by 100px */
+   left: -1452px; /* shift the image left by 100px */
+   height: auto;
+   width: auto;
+   min-height: 100%; /* ensure the image fills the container */
+   min-width: 100%;
+   object-fit: cover; /* fill the container while preserving aspect ratio */
+    /* padding:100px; */
+    transform: scale(40%) ;
+}
+
+#original-images-4{
+    /* width: 400px;
+    height auto;
+    /* margin: -50px -100px 0px 0px; */
+    /* margin: -150px 0px 0px -150px;
+    padding: 10px; */
+
+   position: absolute;
+   top: -725px; /* shift the image up by 100px */
+   left: -1442px; /* shift the image left by 100px */
+   height: auto;
+   width: auto;
+   min-height: 100%; /* ensure the image fills the container */
+   min-width: 100%;
+   object-fit: cover; /* fill the container while preserving aspect ratio */
+    /* padding:100px; */
+    transform: scale(40%) ;
+}
