@@ -11,7 +11,7 @@ function setup() {
   let canvas = createCanvas(windowWidth, windowHeight-38);
   canvas.position(0, 38);
 
-  gridSizeSlider = createSlider(10, 50, 10);
+  gridSizeSlider = createSlider(10, 90, 10);
   gridSizeSlider.position(10, 10);
   
   invertCheckbox = createCheckbox(' INVERT', false);
@@ -27,13 +27,13 @@ function setup() {
   button.mousePressed(screenshot);
 
   // create the checkboxes
-  checkbox1 = createCheckbox(' Option 1', false);
+  checkbox1 = createCheckbox(' Camera 1', false);
   checkbox1.position(200, 10);
 
-  checkbox2 = createCheckbox(' Option 2', false);
+  checkbox2 = createCheckbox(' Camera 2', false);
   checkbox2.position(300, 10);
 
-  checkbox3 = createCheckbox(' Option 3', false);
+  checkbox3 = createCheckbox(' Camera 3', false);
   checkbox3.position(400, 10);
 
   // set a change event listener for each checkbox
@@ -51,9 +51,9 @@ function draw() {
 
   // image(video, 0, 0, width, height);
 let s = "SMILE. YOU'RE ON CAMERA.";
-  fill('#1C65D2');
-  // text(s, 10, 10, 70, 80);
-  text(s, width/2, height/2);
+  // fill('#1C65D2');
+  fill('black');
+  text(s, width/2, (height/2)-35);
 
 
   // check which checkbox is checked and execute the corresponding code

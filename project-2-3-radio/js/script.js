@@ -7,15 +7,36 @@ let checkbox1, checkbox2, checkbox3;
 let video;
 
 
-function setup() {
+function setup() {  
   let canvas = createCanvas(windowWidth, windowHeight-38);
   canvas.position(0, 38);
 
-  gridSizeSlider = createSlider(10, 50, 10);
+  gridSizeSlider = createSlider(10, 90, 10);
   gridSizeSlider.position(10, 10);
+  gridSizeSlider.style('width', '100px'); // set the width of the slider
+  gridSizeSlider.style('height', '10px'); // set the height of the slider track
+  gridSizeSlider.style('background-color', 'gray'); // set the color of the slider track
+  gridSizeSlider.style('outline', 'none'); // remove the outline of the slider thumb
+  // gridSizeSlider.style('border-radius', '5px'); // round the corners of the slider track
+  gridSizeSlider.style('appearance', 'none'); // remove the default appearance of the slider thumb
+  gridSizeSlider.style('::-webkit-slider-thumb', 'background-color: white'); // set the color of the slider thumb for WebKit browsers (Chrome, Safari, etc.)
+  gridSizeSlider.style('::-moz-range-thumb', 'background-color: white'); // set the color of the slider thumb for Firefox
+
+  // change the color of the slider thumb
+  gridSizeSlider.style('::-webkit-slider-thumb', 'background-color: red !important');
+  gridSizeSlider.style('::-moz-range-thumb', 'background-color: red !important');
+
   
   invertCheckbox = createCheckbox(' INVERT', false);
-  invertCheckbox.position(550, 10);
+  invertCheckbox.position(550, 0);
+  invertCheckbox.style('color', '#31E638');
+  invertCheckbox.style('background-color', '#343434'); 
+  invertCheckbox.style('border', 'none'); 
+  invertCheckbox.style('outline','none'); 
+  invertCheckbox.style('height','38px');
+  invertCheckbox.style('width','200px');
+  invertCheckbox.style('line-height', '2.2em');
+  invertCheckbox.style('font-family', 'helvetica');
 
   video = createCapture(VIDEO);
   video.size(width, height);
@@ -23,41 +44,54 @@ function setup() {
 
   button = createButton('SCREENSHOT');
   // button.position(width - button.width - 30, 10);
-  button.position(800, 10);
+  button.position((windowWidth-150), 5);
   button.mousePressed(screenshot);
+  button.style('background-color', '#31E638');
+  button.style('color', '#343434');
+  // button.style('background-color', '#31E638'); 
+  // button.style('border', 'none'); 
+  // button.style('outline','none'); 
+  // button.style('height','38px');
+  // button.style('width','200px');
+  button.style('padding', '3px');
+  button.style('font-size', '15px');
 
-  // create the checkboxes
-  checkbox1 = createCheckbox(' Option 1', false);
-  checkbox1.position(200, 10);
-
-  checkbox2 = createCheckbox(' Option 2', false);
-  checkbox2.position(300, 10);
-
-  checkbox3 = createCheckbox(' Option 3', false);
-  checkbox3.position(400, 10);
-
-  // set a change event listener for each checkbox
-  checkbox1.changed(updateCheckboxes);
-  checkbox2.changed(updateCheckboxes);
-  checkbox3.changed(updateCheckboxes);
   
-  textSize(24);
+  radio = createRadio();
+  radio.option(' CAMERA 1  ');
+  radio.option(' CAMERA 2  ');
+  radio.option(' CAMERA 3  ');
+  // radio.style('width', '60px');
+  // textAlign(CENTER);
+  fill(255, 0, 0);
+  radio.position(200,0);
+  radio.style('color', '#31E638'); 
+  radio.style('background-color', '#343434'); 
+  radio.style('border', 'none'); 
+  radio.style('outline', 'none'); 
+  radio.style('height','38px');
+  radio.style('width','350px');
+  radio.style('line-height', '2.2em');
+  radio.style('font-family', 'helvetica');
+  
+  textSize(50);
   textAlign(CENTER, CENTER);
   
 }
 
 function draw() {
-  background(220);
+  background('#5e5e5e');
 
   // image(video, 0, 0, width, height);
 let s = "SMILE. YOU'RE ON CAMERA.";
-  fill('#1C65D2');
-  // text(s, 10, 10, 70, 80);
-  text(s, width/2, height/2);
-
+  // fill('#1C65D2');
+  fill('#343434');
+  text(s, width/2, (height/2)-35);
 
   // check which checkbox is checked and execute the corresponding code
-  if (checkbox1.checked()) {
+  // if (checkbox1.checked()) {
+  let val = radio.value();
+  if(val == ' CAMERA 1  '){
     background('#D9D9D9');
 
     let gridSize = gridSizeSlider.value();
@@ -90,7 +124,7 @@ let s = "SMILE. YOU'RE ON CAMERA.";
     filter(INVERT);
   }
     
-  } else if (checkbox2.checked()) {
+  } else if(val == ' CAMERA 2  '){
     let gridSize = gridSizeSlider.value();
     background('#D9D9D9');
 
@@ -118,7 +152,7 @@ let s = "SMILE. YOU'RE ON CAMERA.";
       if (invertCheckbox.checked()) {
     filter(INVERT);
       }
-  } else if (checkbox3.checked()){
+  } else if(val == ' CAMERA 3  '){
     let gridSize = gridSizeSlider.value();
     background('#D9D9D9');
 
@@ -149,20 +183,6 @@ let s = "SMILE. YOU'RE ON CAMERA.";
       }
 }
 
-}
-
-  function updateCheckboxes() {
-  // uncheck all checkboxes except for the one that was just checked
-  if (checkbox1.checked()) {
-    checkbox2.checked(false);
-    checkbox3.checked(false);
-  } else if (checkbox2.checked()) {
-    checkbox1.checked(false);
-    checkbox3.checked(false);
-  } else if (checkbox3.checked()) {
-    checkbox1.checked(false);
-    checkbox2.checked(false);
-  }
 }
 
 function screenshot() {

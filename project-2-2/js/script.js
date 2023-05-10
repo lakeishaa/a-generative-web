@@ -41,8 +41,6 @@ function setup() {
   checkbox2.changed(updateCheckboxes);
   checkbox3.changed(updateCheckboxes);
   
-  textSize(24);
-  textAlign(CENTER, CENTER);
   
 }
 
@@ -50,11 +48,6 @@ function draw() {
   background(220);
 
   // image(video, 0, 0, width, height);
-let s = "SMILE. YOU'RE ON CAMERA.";
-  fill('#1C65D2');
-  // text(s, 10, 10, 70, 80);
-  text(s, width/2, height/2);
-
 
   // check which checkbox is checked and execute the corresponding code
   if (checkbox1.checked()) {
@@ -92,7 +85,6 @@ let s = "SMILE. YOU'RE ON CAMERA.";
     
   } else if (checkbox2.checked()) {
     let gridSize = gridSizeSlider.value();
-    background('#D9D9D9');
 
     video.loadPixels();
     for (let y = 0; y < video.height; y += gridSize) {
@@ -120,7 +112,6 @@ let s = "SMILE. YOU'RE ON CAMERA.";
       }
   } else if (checkbox3.checked()){
     let gridSize = gridSizeSlider.value();
-    background('#D9D9D9');
 
     video.loadPixels();
   for (let y=0; y<video.height; y+=gridSize) {
