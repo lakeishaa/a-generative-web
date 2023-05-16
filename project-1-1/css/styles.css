@@ -268,8 +268,8 @@ canvas {
 
 #process-images-cover{
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: auto auto auto; */
     position: relative;
     height: 500px; /* set the desired height */
     width: 357px; /* set the desired width */
