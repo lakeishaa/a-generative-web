@@ -29,7 +29,7 @@ function setup() {
 
   
   invertCheckbox = createCheckbox(' INVERT', false);
-  invertCheckbox.position(200, 5);
+  invertCheckbox.position(198, 5);
   // invertCheckbox.style('color', '#31E638');
   // invertCheckbox.style('background-color', '#343434'); 
   invertCheckbox.style('border', 'none'); 
